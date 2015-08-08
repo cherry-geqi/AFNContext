@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		901451011B68B07A003B1588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 901451001B68B07A003B1588 /* main.m */; };
+		901451041B68B07A003B1588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 901451031B68B07A003B1588 /* AppDelegate.m */; };
+		901451071B68B07A003B1588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901451061B68B07A003B1588 /* ViewController.m */; };
+		9014510A1B68B07A003B1588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901451081B68B07A003B1588 /* Main.storyboard */; };
+		9014510C1B68B07A003B1588 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9014510B1B68B07A003B1588 /* Images.xcassets */; };
+		9014510F1B68B07A003B1588 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9014510D1B68B07A003B1588 /* LaunchScreen.xib */; };
+		9014511B1B68B07A003B1588 /* AFNContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9014511A1B68B07A003B1588 /* AFNContextTests.m */; };
+		901451271B68B144003B1588 /* AFNContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 901451261B68B144003B1588 /* AFNContext.m */; };
+		DE81220A5B1C5190A69C7BF7 /* libPods-AFNContext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F9CC5CBA3E44185A857F0F /* libPods-AFNContext.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		901451151B68B07A003B1588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 901450F31B68B07A003B1588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 901450FA1B68B07A003B1588;
+			remoteInfo = AFNContext;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45CE1C9089A929CE88D3B03C /* Pods-AFNContext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNContext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFNContext/Pods-AFNContext.debug.xcconfig"; sourceTree = "<group>"; };
+		51F9CC5CBA3E44185A857F0F /* libPods-AFNContext.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFNContext.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		901450FB1B68B07A003B1588 /* AFNContext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFNContext.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		901450FF1B68B07A003B1588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901451001B68B07A003B1588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		901451021B68B07A003B1588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		901451031B68B07A003B1588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		901451051B68B07A003B1588 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		901451061B68B07A003B1588 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		901451091B68B07A003B1588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9014510B1B68B07A003B1588 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9014510E1B68B07A003B1588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		901451141B68B07A003B1588 /* AFNContextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AFNContextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		901451191B68B07A003B1588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9014511A1B68B07A003B1588 /* AFNContextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNContextTests.m; sourceTree = "<group>"; };
+		901451251B68B144003B1588 /* AFNContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNContext.h; sourceTree = "<group>"; };
+		901451261B68B144003B1588 /* AFNContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNContext.m; sourceTree = "<group>"; };
+		E71A34F9FAB4B0D70707CE93 /* Pods-AFNContext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNContext.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFNContext/Pods-AFNContext.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		901450F81B68B07A003B1588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE81220A5B1C5190A69C7BF7 /* libPods-AFNContext.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901451111B68B07A003B1588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		901450F21B68B07A003B1588 = {
+			isa = PBXGroup;
+			children = (
+				901450FD1B68B07A003B1588 /* AFNContext */,
+				901451171B68B07A003B1588 /* AFNContextTests */,
+				901450FC1B68B07A003B1588 /* Products */,
+				91B72B80514F60770B529B3F /* Pods */,
+				CE99CB790FD006EC362C1583 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		901450FC1B68B07A003B1588 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				901450FB1B68B07A003B1588 /* AFNContext.app */,
+				901451141B68B07A003B1588 /* AFNContextTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		901450FD1B68B07A003B1588 /* AFNContext */ = {
+			isa = PBXGroup;
+			children = (
+				901451241B68B134003B1588 /* AFNContext */,
+				901451021B68B07A003B1588 /* AppDelegate.h */,
+				901451031B68B07A003B1588 /* AppDelegate.m */,
+				901451051B68B07A003B1588 /* ViewController.h */,
+				901451061B68B07A003B1588 /* ViewController.m */,
+				901451081B68B07A003B1588 /* Main.storyboard */,
+				9014510B1B68B07A003B1588 /* Images.xcassets */,
+				9014510D1B68B07A003B1588 /* LaunchScreen.xib */,
+				901450FE1B68B07A003B1588 /* Supporting Files */,
+			);
+			path = AFNContext;
+			sourceTree = "<group>";
+		};
+		901450FE1B68B07A003B1588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				901450FF1B68B07A003B1588 /* Info.plist */,
+				901451001B68B07A003B1588 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		901451171B68B07A003B1588 /* AFNContextTests */ = {
+			isa = PBXGroup;
+			children = (
+				9014511A1B68B07A003B1588 /* AFNContextTests.m */,
+				901451181B68B07A003B1588 /* Supporting Files */,
+			);
+			path = AFNContextTests;
+			sourceTree = "<group>";
+		};
+		901451181B68B07A003B1588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				901451191B68B07A003B1588 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		901451241B68B134003B1588 /* AFNContext */ = {
+			isa = PBXGroup;
+			children = (
+				901451251B68B144003B1588 /* AFNContext.h */,
+				901451261B68B144003B1588 /* AFNContext.m */,
+			);
+			name = AFNContext;
+			sourceTree = "<group>";
+		};
+		91B72B80514F60770B529B3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45CE1C9089A929CE88D3B03C /* Pods-AFNContext.debug.xcconfig */,
+				E71A34F9FAB4B0D70707CE93 /* Pods-AFNContext.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE99CB790FD006EC362C1583 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51F9CC5CBA3E44185A857F0F /* libPods-AFNContext.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		901450FA1B68B07A003B1588 /* AFNContext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9014511E1B68B07A003B1588 /* Build configuration list for PBXNativeTarget "AFNContext" */;
+			buildPhases = (
+				06519936032D0759C273D833 /* Check Pods Manifest.lock */,
+				901450F71B68B07A003B1588 /* Sources */,
+				901450F81B68B07A003B1588 /* Frameworks */,
+				901450F91B68B07A003B1588 /* Resources */,
+				94A9D7E5778F9FB9C9D2DFB0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNContext;
+			productName = AFNContext;
+			productReference = 901450FB1B68B07A003B1588 /* AFNContext.app */;
+			productType = "com.apple.product-type.application";
+		};
+		901451131B68B07A003B1588 /* AFNContextTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901451211B68B07A003B1588 /* Build configuration list for PBXNativeTarget "AFNContextTests" */;
+			buildPhases = (
+				901451101B68B07A003B1588 /* Sources */,
+				901451111B68B07A003B1588 /* Frameworks */,
+				901451121B68B07A003B1588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				901451161B68B07A003B1588 /* PBXTargetDependency */,
+			);
+			name = AFNContextTests;
+			productName = AFNContextTests;
+			productReference = 901451141B68B07A003B1588 /* AFNContextTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		901450F31B68B07A003B1588 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = onemo;
+				TargetAttributes = {
+					901450FA1B68B07A003B1588 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					901451131B68B07A003B1588 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 901450FA1B68B07A003B1588;
+					};
+				};
+			};
+			buildConfigurationList = 901450F61B68B07A003B1588 /* Build configuration list for PBXProject "AFNContext" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 901450F21B68B07A003B1588;
+			productRefGroup = 901450FC1B68B07A003B1588 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				901450FA1B68B07A003B1588 /* AFNContext */,
+				901451131B68B07A003B1588 /* AFNContextTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		901450F91B68B07A003B1588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9014510A1B68B07A003B1588 /* Main.storyboard in Resources */,
+				9014510F1B68B07A003B1588 /* LaunchScreen.xib in Resources */,
+				9014510C1B68B07A003B1588 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901451121B68B07A003B1588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06519936032D0759C273D833 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94A9D7E5778F9FB9C9D2DFB0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFNContext/Pods-AFNContext-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		901450F71B68B07A003B1588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901451071B68B07A003B1588 /* ViewController.m in Sources */,
+				901451271B68B144003B1588 /* AFNContext.m in Sources */,
+				901451041B68B07A003B1588 /* AppDelegate.m in Sources */,
+				901451011B68B07A003B1588 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901451101B68B07A003B1588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9014511B1B68B07A003B1588 /* AFNContextTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		901451161B68B07A003B1588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 901450FA1B68B07A003B1588 /* AFNContext */;
+			targetProxy = 901451151B68B07A003B1588 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		901451081B68B07A003B1588 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				901451091B68B07A003B1588 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9014510D1B68B07A003B1588 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9014510E1B68B07A003B1588 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9014511C1B68B07A003B1588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9014511D1B68B07A003B1588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9014511F1B68B07A003B1588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45CE1C9089A929CE88D3B03C /* Pods-AFNContext.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AFNContext/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		901451201B68B07A003B1588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71A34F9FAB4B0D70707CE93 /* Pods-AFNContext.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AFNContext/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		901451221B68B07A003B1588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AFNContextTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AFNContext.app/AFNContext";
+			};
+			name = Debug;
+		};
+		901451231B68B07A003B1588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AFNContextTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AFNContext.app/AFNContext";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		901450F61B68B07A003B1588 /* Build configuration list for PBXProject "AFNContext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9014511C1B68B07A003B1588 /* Debug */,
+				9014511D1B68B07A003B1588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9014511E1B68B07A003B1588 /* Build configuration list for PBXNativeTarget "AFNContext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9014511F1B68B07A003B1588 /* Debug */,
+				901451201B68B07A003B1588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		901451211B68B07A003B1588 /* Build configuration list for PBXNativeTarget "AFNContextTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901451221B68B07A003B1588 /* Debug */,
+				901451231B68B07A003B1588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 901450F31B68B07A003B1588 /* Project object */;
+}
