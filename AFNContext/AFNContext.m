@@ -11,14 +11,17 @@
 @interface AFNContext ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
+
 @property (nonatomic, copy) NSString *requestMethod;
 @property (nonatomic, copy) NSString *requestPathPrefix;
 @property (nonatomic, copy) NSString *requestPath;
 @property (nonatomic, strong) NSMutableDictionary *parameters;
 
 @property (nonatomic, copy) void (^multipartFormDataBlock)(id<AFMultipartFormData> formData);
-@property (nonatomic, copy) void(^uploadProgressBlock)(CGFloat progress);
-@property (nonatomic, copy) void(^downloadProgressBlock)(CGFloat progress);
+@property (nonatomic, copy) void (^uploadProgressBlock)(CGFloat progress);
+@property (nonatomic, copy) void (^downloadProgressBlock)(CGFloat progress);
+
+@property (nonatomic, copy) void (^responseCallback)(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error));
 
 @end
 
@@ -58,10 +61,16 @@
     };
 }
 
-- (AFNContext * (^)(NSString *method))path
+- (AFNContext * (^)(NSString *path, ...))path
 {
-    return ^(NSString *path) {
-        self.requestPath = path;
+    return ^(NSString *path, ...) {
+        va_list arglist;
+        va_start(arglist, path);
+        
+        self.requestPath = [[NSString alloc] initWithFormat:path arguments:arglist];
+        
+        va_end(arglist);
+        
         return self;
     };
 }
@@ -80,46 +89,6 @@
 {
     return ^(NSDictionary *parameters) {
         [self.parameters addEntriesFromDictionary:parameters];
-        return self;
-    };
-}
-
-- (AFNContext * (^)(NSData *data, NSString *name, NSString *fileName, NSString *mimeType))addMultipartFileData
-{
-    return ^(NSData *data, NSString *name, NSString *fileName, NSString *mimeType) {
-        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileData:data name:name fileName:fileName mimeType:mimeType];
-        });
-        return self;
-    };
-}
-
-- (AFNContext * (^)(NSURL *fileURL, NSString *name, NSError * __autoreleasing * error))addMultipartFileURL
-{
-    return ^(NSURL *fileURL, NSString *name, NSError * __autoreleasing * error) {
-        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileURL:fileURL name:name error:error];
-        });
-        return self;
-    };
-}
-
-- (AFNContext * (^)(NSURL *fileURL, NSString *name, NSString *fileName, NSString *mimeType, NSError * __autoreleasing * error))addMultipartFileURL2
-{
-    return ^(NSURL *fileURL, NSString *name, NSString *fileName, NSString *mimeType, NSError * __autoreleasing * error) {
-        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileURL:fileURL name:name fileName:fileName mimeType:mimeType error:error];
-        });
-        return self;
-    };
-}
-
-- (AFNContext * (^)(NSInputStream *inputStream, NSString *name, NSString *fileName, int64_t length, NSString *mimeType))addMultipartInputStream
-{
-    return ^(NSInputStream *inputStream, NSString *name, NSString *fileName, int64_t length, NSString *mimeType) {
-        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithInputStream:inputStream name:name fileName:fileName length:length mimeType:mimeType];
-        });
         return self;
     };
 }
@@ -155,18 +124,39 @@
     };
 }
 
-- (void (^)(void (^completionBlock)(id responseObject, NSError *error)))exec;
+- (AFNContext * (^)(void (^responseCallback)(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error))))addResponseCallback
 {
-    return ^(void (^completionBlock)(id responseObject, NSError *error)) {
+    return ^(void (^responseCallback)(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error))) {
+        void (^prev)(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error)) = self.responseCallback;
+        
+        if (!prev) {
+            prev = ^(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error)) {
+                next(responseObject, error);
+            };
+        }
+        
+        self.responseCallback = ^(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error)) {
+            prev(responseObject, error, ^(id responseObject, NSError *error) {
+                responseCallback(responseObject, error, next);
+            });
+        };
+        
+        return self;
+    };
+}
+
+- (void (^)())done;
+{
+    return ^{
         void (^successBlock)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-            if (completionBlock) {
-                completionBlock(responseObject, nil);
+            if (self.responseCallback) {
+                self.responseCallback(responseObject, nil, ^(id responseObject, NSError *error) {});
             }
         };
         
         void (^failureBlock)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *error) {
-            if (completionBlock) {
-                completionBlock(nil, error);
+            if (self.responseCallback) {
+                self.responseCallback(nil, error, ^(id responseObject, NSError *error) {});
             }
         };
         
@@ -269,6 +259,97 @@
     }
     
     return [self.manager HTTPRequestOperationWithRequest:request success:success failure:failure];
+}
+
+@end
+
+#pragma mark - AFNContextMultipartExtension
+
+@implementation AFNContext (AFNContextMultipartExtension)
+
+- (AFNContext * (^)(NSData *data, NSString *name, NSString *fileName, NSString *mimeType))addMultipartFileData
+{
+    return ^(NSData *data, NSString *name, NSString *fileName, NSString *mimeType) {
+        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:data name:name fileName:fileName mimeType:mimeType];
+        });
+        return self;
+    };
+}
+
+- (AFNContext * (^)(NSURL *fileURL, NSString *name, NSError * __autoreleasing * error))addMultipartFileURL
+{
+    return ^(NSURL *fileURL, NSString *name, NSError * __autoreleasing * error) {
+        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileURL:fileURL name:name error:error];
+        });
+        return self;
+    };
+}
+
+- (AFNContext * (^)(NSURL *fileURL, NSString *name, NSString *fileName, NSString *mimeType, NSError * __autoreleasing * error))addMultipartFileURL2
+{
+    return ^(NSURL *fileURL, NSString *name, NSString *fileName, NSString *mimeType, NSError * __autoreleasing * error) {
+        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileURL:fileURL name:name fileName:fileName mimeType:mimeType error:error];
+        });
+        return self;
+    };
+}
+
+- (AFNContext * (^)(NSInputStream *inputStream, NSString *name, NSString *fileName, int64_t length, NSString *mimeType))addMultipartInputStream
+{
+    return ^(NSInputStream *inputStream, NSString *name, NSString *fileName, int64_t length, NSString *mimeType) {
+        self.addMultipartFormData(^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithInputStream:inputStream name:name fileName:fileName length:length mimeType:mimeType];
+        });
+        return self;
+    };
+}
+
+@end
+
+#pragma mark - AFNContextMultipartExtension
+
+@implementation AFNContext (AFNContextResponseExtension)
+
+- (AFNContext * (^)(void(^)(id responseObject)))success
+{
+    return ^(void(^successBlock)(id responseObject)) {
+        self.response(^(id responseObject, NSError *error) {
+            if (!error) {
+                successBlock(responseObject);
+            }
+        });
+        
+        return self;
+    };
+}
+
+- (AFNContext * (^)(void(^)(NSError *error)))failure
+{
+    return ^(void(^failureBlock)(NSError *error)) {
+        self.response(^(id responseObject, NSError *error) {
+            if (error) {
+                failureBlock(error);
+            }
+        });
+        
+        return self;
+    };
+}
+
+- (AFNContext * (^)(void(^)(id responseObject, NSError *error)))response
+{
+    return ^(void(^responseBlock)(id responseObject, NSError *error)) {
+        self
+        .addResponseCallback(^(id responseObject, NSError *error, void (^next)(id responseObject, NSError *error)) {
+            responseBlock(responseObject, error);
+            next(responseObject, error);
+        });
+        
+        return self;
+    };
 }
 
 @end
