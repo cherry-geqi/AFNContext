@@ -10,9 +10,13 @@ AFNContext is a Chainable, User-Friendly, Full-Featured wrapper over [AFNetworki
 AFNContext
 .context(nil)
 .path(@"http://example.com/thing")
-.exec(^(id responseObject, NSError *error) {
-    // handle response or error
-});
+.success(^(id responseObject) {
+    // handle response
+})
+.failure(^(NSError *error) {
+    // handle error
+})
+.done();
 ```
 
 ### POST
@@ -23,9 +27,13 @@ AFNContext
 .method(@"POST")
 .addParamster(@"foo", @"bar")
 .path(@"http://example.com/things")
-.exec(^(id responseObject, NSError *error) {
-    // handle response or error
-});
+.success(^(id responseObject) {
+    // handle response
+})
+.failure(^(NSError *error) {
+    // handle error
+})
+.done();
 ```
 
 ### Multipart with upload progress
@@ -39,9 +47,13 @@ AFNContext
 .uploadProgress(^(CGFloat progress) {
     NSLog(@"upload progress: %@", @(progress));
 })
-.exec(^(id responseObject, NSError *error) {
-    // handle response or error
-});
+.success(^(id responseObject) {
+    // handle response
+})
+.failure(^(NSError *error) {
+    // handle error
+})
+.done();
 ```
 
 ### Download a file with progress
@@ -53,9 +65,13 @@ AFNContext
 .downloadProgress(^(CGFloat progress) {
     NSLog(@"upload progress: %@", @(progress));
 })
-.exec(^(id responseObject, NSError *error) {
-    // handle response or error
-});
+.success(^(id responseObject) {
+    // handle response
+})
+.failure(^(NSError *error) {
+    // handle error
+})
+.done();
 
 ```
 
