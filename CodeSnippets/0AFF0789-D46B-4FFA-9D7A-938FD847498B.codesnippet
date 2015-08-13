@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>addMultipartFileURL</string>
+	<string>failure</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>.addMultipartFileURL(&lt;#fileURL#&gt;, &lt;#@"name"#&gt;, &lt;#error#&gt;)</string>
+	<string>.failure(^(NSError *error) {
+    &lt;#// handle error#&gt;
+})</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>405A12B3-A222-471F-9FDD-FB4A4F892BF6</string>
+	<string>0AFF0789-D46B-4FFA-9D7A-938FD847498B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>failure</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>addMultipartFileURL</string>
+	<string>failure</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

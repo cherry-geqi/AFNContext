@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>exec</string>
+	<string>done</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>.exec(^(id respondObject, NSError *error) {
-    &lt;#statements#&gt;
-})</string>
+	<string>.done();</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>09EBAAED-710C-4F06-BFF3-B559DEE52678</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>exec</string>
+	<string>done</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
