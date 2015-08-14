@@ -203,7 +203,7 @@
 
 - (NSString *)buildPath
 {
-    return [NSString stringWithFormat:@"%@%@", self.requestPathPrefix, self.requestPath];
+    return [NSString stringWithFormat:@"%@%@", self.requestPathPrefix ?: @"", self.requestPath ?: @""];
 }
 
 - (AFHTTPRequestOperation *)multipartHTTPRequestOperationWithHTTPMethod:(NSString *)method
